@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body ng-app="myApp">
+        <h1>Angular Review</h1>
+
+        <div ng-controller="MainCtrl as ctrl">
+          <h3>Shoes I would stab you in the face for!</h3>
+
+          <ul>
+            <li ng-repeat="sneaker in ctrl.sneakers">
+            {{sneaker.Brand}}
+            <br>
+            {{sneaker.Name}}
+            <br>
+            {{sneaker.Price}}
+
+            <button ng-click="ctrl.removeShoes(sneaker)">Delete Shoes</button>
+            </li>
+          </ul>
+
+            <div>
+              <input ng-model="ctrl.newShoe.Brand"type="text" placeholder="Enter Shoe Brand">
+              <input ng-model="ctrl.newShoe.Name"type="text" placeholder="Enter Shoe Name">
+              <input ng-model="ctrl.newShoe.Price"type="text" placeholder="Enter Shoe Price">
+
+              <button ng-click="ctrl.addShoes(ctrl.newShoe)">Add Shoes</button>
+            </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
